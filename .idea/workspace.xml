@@ -5,15 +5,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8ef9d01a-a6a1-4b3d-9b32-c48709aea66b" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/discovery_server/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/discovery_server/src/main/java/com/azubike/ellipsis/DiscoveryServer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/discovery_server/src/main/resources/application.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/discovery_server/src/main/resources/banner.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api-gateway/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api-gateway/src/main/java/com/azubike/ellpsis/ApiGateway.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api-gateway/src/main/resources/application.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api-gateway/src/main/resources/banner.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/discovery_server/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/discovery_server/src/main/resources/application.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/product_service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/product_service/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/product_service/src/main/java/com/azubike/ellpsis/ProductService.java" beforeDir="false" afterPath="$PROJECT_DIR$/product_service/src/main/java/com/azubike/ellpsis/ProductService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/product_service/src/main/java/com/azubike/ellpsis/controller/ProductController.java" beforeDir="false" afterPath="$PROJECT_DIR$/product_service/src/main/java/com/azubike/ellpsis/controller/ProductController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/product_service/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/product_service/src/main/resources/application.yml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -57,7 +57,27 @@
     "nodejs_package_manager_path": "npm"
   }
 }]]></component>
-  <component name="RunManager" selected="Spring Boot.DiscoveryServer">
+  <component name="RunDashboard">
+    <option name="configurationTypes">
+      <set>
+        <option value="SpringBootApplicationConfigurationType" />
+      </set>
+    </option>
+  </component>
+  <component name="RunManager" selected="Spring Boot.ProductService">
+    <configuration name="ApiGateway" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
+      <module name="api-gateway" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.azubike.ellpsis.ApiGateway" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.azubike.ellpsis.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="DiscoveryServer" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
       <module name="discovery_server" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.azubike.ellipsis.DiscoveryServer" />
@@ -87,6 +107,7 @@
     <recent_temporary>
       <list>
         <item itemvalue="Spring Boot.ProductService" />
+        <item itemvalue="Spring Boot.ApiGateway" />
         <item itemvalue="Spring Boot.DiscoveryServer" />
       </list>
     </recent_temporary>
@@ -99,7 +120,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1688863185522</updated>
-      <workItem from="1688863187122" duration="2497000" />
+      <workItem from="1688863187122" duration="11141000" />
     </task>
     <servers />
   </component>

@@ -10,6 +10,7 @@
     <modules>
         <module>product_service</module>
         <module>discovery_server</module>
+        <module>api-gateway</module>
     </modules>
     <packaging>pom</packaging>
 
