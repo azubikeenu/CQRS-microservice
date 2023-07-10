@@ -27,6 +27,7 @@ public class ProductCommandController {
                         .productId(UUID.randomUUID().toString()).build();
         String returnedValue = "";
         try{
+            //sends the command object to the eventBus/commandGateway
         returnedValue = commandGateway.sendAndWait(createProductCommand);
         }catch(Exception ex){
             returnedValue = ex.getLocalizedMessage();
@@ -35,19 +36,5 @@ public class ProductCommandController {
         return returnedValue;
     }
 
-    @GetMapping(produces = MediaType.APPLICATION_JSON_VALUE)
-    public String getProduct() {
-        return "Get product dummy data";
-    }
-
-    @PutMapping(produces = MediaType.APPLICATION_JSON_VALUE, consumes = MediaType.APPLICATION_JSON_VALUE)
-    public String updateProduct() {
-        return "Update product dummy data";
-    }
-
-    @DeleteMapping
-    public String deleteProduct() {
-        return "Delete Product dummy data";
-    }
 
 }

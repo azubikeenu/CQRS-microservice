@@ -31,7 +31,7 @@ public class ProductAggregate {
         }
         ProductCreatedEvent productCreatedEvent = new ProductCreatedEvent();
         BeanUtils.copyProperties(createProductCommand, productCreatedEvent);
-
+          // persist the command object in the event store
         AggregateLifecycle.apply(productCreatedEvent);
     }
 

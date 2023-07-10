@@ -16,6 +16,7 @@ public class ProductEventHandler {
     public void on(ProductCreatedEvent productCreatedEvent) {
         ProductEntity productEntity = new ProductEntity();
         BeanUtils.copyProperties(productCreatedEvent ,productEntity);
+        // persists the command object in the main storage
         productRepository.save(productEntity);
     }
 
