@@ -5,14 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8ef9d01a-a6a1-4b3d-9b32-c48709aea66b" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/product_service/src/main/java/com/azubike/ellpsis/query/FindProductsQuery.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/product_service/src/main/java/com/azubike/ellpsis/query/ProductQueryHandler.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/product_service/src/main/java/com/azubike/ellpsis/query/rest/ProductModel.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/product_service/src/main/java/com/azubike/ellpsis/command/ProductAggregate.java" beforeDir="false" afterPath="$PROJECT_DIR$/product_service/src/main/java/com/azubike/ellpsis/command/ProductAggregate.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/product_service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/product_service/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/product_service/src/main/java/com/azubike/ellpsis/command/rest/CreateProductModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/product_service/src/main/java/com/azubike/ellpsis/command/rest/CreateProductModel.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/product_service/src/main/java/com/azubike/ellpsis/command/rest/ProductCommandController.java" beforeDir="false" afterPath="$PROJECT_DIR$/product_service/src/main/java/com/azubike/ellpsis/command/rest/ProductCommandController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/product_service/src/main/java/com/azubike/ellpsis/query/ProductEventHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/product_service/src/main/java/com/azubike/ellpsis/query/ProductEventHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/product_service/src/main/java/com/azubike/ellpsis/query/rest/ProductQueryController.java" beforeDir="false" afterPath="$PROJECT_DIR$/product_service/src/main/java/com/azubike/ellpsis/query/rest/ProductQueryController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/product_service/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/product_service/src/main/resources/application.yml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -113,8 +110,8 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Spring Boot.ApiGateway" />
         <item itemvalue="Spring Boot.ProductService" />
+        <item itemvalue="Spring Boot.ApiGateway" />
         <item itemvalue="Spring Boot.DiscoveryServer" />
       </list>
     </recent_temporary>
@@ -128,7 +125,7 @@
       <option name="presentableId" value="Default" />
       <updated>1688863185522</updated>
       <workItem from="1688863187122" duration="17220000" />
-      <workItem from="1688918112809" duration="15049000" />
+      <workItem from="1688918112809" duration="17792000" />
     </task>
     <servers />
   </component>

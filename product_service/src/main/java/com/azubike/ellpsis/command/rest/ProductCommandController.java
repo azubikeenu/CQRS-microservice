@@ -7,6 +7,7 @@ import org.springframework.core.env.Environment;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
 
+import javax.validation.Valid;
 import java.util.UUID;
 
 @RestController
@@ -19,7 +20,7 @@ public class ProductCommandController {
 
 
     @PostMapping(produces = MediaType.APPLICATION_JSON_VALUE, consumes = MediaType.APPLICATION_JSON_VALUE)
-    public String createProduct(@RequestBody CreateProductModel createProductModel) {
+    public String createProduct(@Valid  @RequestBody CreateProductModel createProductModel) {
         final CreateProductCommand createProductCommand =
                 CreateProductCommand.builder().price(createProductModel.getPrice())
                         .title(createProductModel.getTitle())
