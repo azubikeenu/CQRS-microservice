@@ -5,7 +5,11 @@ import lombok.RequiredArgsConstructor;
 import org.axonframework.commandhandling.gateway.CommandGateway;
 import org.springframework.core.env.Environment;
 import org.springframework.http.MediaType;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 
 import javax.validation.Valid;
 import java.util.UUID;
@@ -20,21 +24,22 @@ public class ProductCommandController {
 
 
     @PostMapping(produces = MediaType.APPLICATION_JSON_VALUE, consumes = MediaType.APPLICATION_JSON_VALUE)
-    public String createProduct(@Valid  @RequestBody CreateProductModel createProductModel) {
+    public ResponseEntity<String> createProduct(@Valid @RequestBody CreateProductModel createProductModel) {
         final CreateProductCommand createProductCommand =
                 CreateProductCommand.builder().price(createProductModel.getPrice())
                         .title(createProductModel.getTitle())
                         .quantity(createProductModel.getQuantity())
                         .productId(UUID.randomUUID().toString()).build();
         String returnedValue = "";
-        try{
+        try {
             //sends the command object to the eventBus/commandGateway
-        returnedValue = commandGateway.sendAndWait(createProductCommand);
-        }catch(Exception ex){
+            returnedValue = commandGateway.sendAndWait(createProductCommand);
+        } catch (Exception ex) {
             returnedValue = ex.getLocalizedMessage();
+            return ResponseEntity.badRequest().body(returnedValue);
         }
 
-        return returnedValue;
+        return ResponseEntity.ok(returnedValue);
     }
 
 

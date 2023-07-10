@@ -10,6 +10,7 @@ import org.axonframework.spring.stereotype.Aggregate;
 import org.springframework.beans.BeanUtils;
 
 import java.math.BigDecimal;
+import java.util.Objects;
 
 @Aggregate
 @NoArgsConstructor
@@ -23,15 +24,17 @@ public class ProductAggregate {
 
     @CommandHandler
     public ProductAggregate(CreateProductCommand createProductCommand) {
+
         if (createProductCommand.getPrice().compareTo(BigDecimal.ZERO) <= 0) {
             throw new IllegalArgumentException("Product price must be greater than zero");
         }
-        if (createProductCommand.getTitle().isBlank() || createProductCommand.getTitle() == null) {
+        if (Objects.requireNonNull(createProductCommand.getTitle()).isBlank() || createProductCommand.getTitle() == null) {
             throw new IllegalArgumentException("Title cannot be empty");
         }
+
         ProductCreatedEvent productCreatedEvent = new ProductCreatedEvent();
         BeanUtils.copyProperties(createProductCommand, productCreatedEvent);
-          // persist the command object in the event store
+        // persist the command object in the event store
         AggregateLifecycle.apply(productCreatedEvent);
     }
 

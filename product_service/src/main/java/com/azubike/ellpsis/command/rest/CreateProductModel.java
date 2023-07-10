@@ -12,7 +12,7 @@ import java.math.BigDecimal;
 @Data
 @ToString
 public class CreateProductModel {
-    @NotBlank(message = "title cannot be blank")
+    //@NotBlank(message = "title cannot be blank")
     private String title;
     @Min(value = 1 , message = "price cannot be lower than 1")
     private BigDecimal price ;
