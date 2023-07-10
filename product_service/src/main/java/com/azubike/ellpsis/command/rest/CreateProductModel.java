@@ -1,4 +1,4 @@
-package com.azubike.ellpsis.rest.dto;
+package com.azubike.ellpsis.command.rest;
 
 
 import lombok.Data;
@@ -8,7 +8,7 @@ import java.math.BigDecimal;
 
 @Data
 @ToString
-public class CreateProductDto {
+public class CreateProductModel {
     private String title;
     private BigDecimal price ;
     private Integer quantity;

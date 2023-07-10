@@ -1,7 +1,6 @@
-package com.azubike.ellpsis.rest.controller;
+package com.azubike.ellpsis.command.rest;
 
 import com.azubike.ellpsis.command.CreateProductCommand;
-import com.azubike.ellpsis.rest.dto.CreateProductDto;
 import lombok.RequiredArgsConstructor;
 import org.axonframework.commandhandling.gateway.CommandGateway;
 import org.springframework.core.env.Environment;
@@ -13,18 +12,18 @@ import java.util.UUID;
 @RestController
 @RequestMapping("/api/v1/products")
 @RequiredArgsConstructor
-public class ProductController {
+public class ProductCommandController {
 
     private final Environment environment;
     private final CommandGateway commandGateway;
 
 
     @PostMapping(produces = MediaType.APPLICATION_JSON_VALUE, consumes = MediaType.APPLICATION_JSON_VALUE)
-    public String createProduct(@RequestBody CreateProductDto createProductDto) {
+    public String createProduct(@RequestBody CreateProductModel createProductModel) {
         final CreateProductCommand createProductCommand =
-                CreateProductCommand.builder().price(createProductDto.getPrice())
-                        .title(createProductDto.getTitle())
-                        .quantity(createProductDto.getQuantity())
+                CreateProductCommand.builder().price(createProductModel.getPrice())
+                        .title(createProductModel.getTitle())
+                        .quantity(createProductModel.getQuantity())
                         .productId(UUID.randomUUID().toString()).build();
         String returnedValue = "";
         try{
