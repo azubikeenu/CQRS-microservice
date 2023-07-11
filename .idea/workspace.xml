@@ -5,7 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8ef9d01a-a6a1-4b3d-9b32-c48709aea66b" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/product_service/src/main/java/com/azubike/ellpsis/command/rest/CreateProductModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/product_service/src/main/java/com/azubike/ellpsis/command/rest/CreateProductModel.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/product_service/src/main/java/com/azubike/ellpsis/command/ProductLookupEventsHandler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/product_service/src/main/java/com/azubike/ellpsis/core/data/ProductLookupEntity.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/product_service/src/main/java/com/azubike/ellpsis/core/data/ProductLookupRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/product_service/src/main/java/com/azubike/ellpsis/command/interceptor/CreateProductCommandInterceptor.java" beforeDir="false" afterPath="$PROJECT_DIR$/product_service/src/main/java/com/azubike/ellpsis/command/interceptor/CreateProductCommandInterceptor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/product_service/src/main/java/com/azubike/ellpsis/config/Registry.java" beforeDir="false" afterPath="$PROJECT_DIR$/product_service/src/main/java/com/azubike/ellpsis/config/Registry.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/product_service/src/main/java/com/azubike/ellpsis/query/ProductEventHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/product_service/src/main/java/com/azubike/ellpsis/query/ProductEventHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/product_service/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/product_service/src/main/resources/application.yml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -33,22 +40,22 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_ADD_EXTERNAL_FILES": "true",
-    "RequestMappingsPanelOrder0": "0",
-    "RequestMappingsPanelOrder1": "1",
-    "RequestMappingsPanelWidth0": "75",
-    "RequestMappingsPanelWidth1": "75",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "jdk.selected.JAVA_MODULE": "17",
-    "nodejs_package_manager_path": "npm",
-    "spring.configuration.checksum": "72af215c85bd1ab8beb582a9c768f592"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
+    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
+    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
+    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;jdk.selected.JAVA_MODULE&quot;: &quot;17&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;spring.configuration.checksum&quot;: &quot;72af215c85bd1ab8beb582a9c768f592&quot;
   }
-}]]></component>
+}</component>
   <component name="ReactorSettings">
     <option name="notificationShown" value="true" />
   </component>
@@ -121,7 +128,8 @@
       <option name="presentableId" value="Default" />
       <updated>1688863185522</updated>
       <workItem from="1688863187122" duration="17220000" />
-      <workItem from="1688918112809" duration="23569000" />
+      <workItem from="1688918112809" duration="23843000" />
+      <workItem from="1689049956448" duration="5632000" />
     </task>
     <servers />
   </component>

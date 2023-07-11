@@ -1,33 +1,38 @@
 package com.azubike.ellpsis.command.interceptor;
 
 import com.azubike.ellpsis.command.CreateProductCommand;
+import com.azubike.ellpsis.core.data.ProductLookupEntity;
+import com.azubike.ellpsis.core.data.ProductLookupRepository;
+import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.axonframework.commandhandling.CommandMessage;
 import org.axonframework.messaging.MessageDispatchInterceptor;
 import org.springframework.stereotype.Component;
 
 import javax.annotation.Nonnull;
-import java.math.BigDecimal;
 import java.util.List;
-import java.util.Objects;
 import java.util.function.BiFunction;
 
 @Component
 @Slf4j
+@RequiredArgsConstructor
 public class CreateProductCommandInterceptor implements MessageDispatchInterceptor<CommandMessage<?>> {
+    private final ProductLookupRepository productLookupRepository;
+
     @Nonnull
     @Override
     public BiFunction<Integer, CommandMessage<?>, CommandMessage<?>> handle(@Nonnull final List<? extends CommandMessage<?>> list) {
         return (index, command) -> {
             if (command.getPayloadType().equals(CreateProductCommand.class)) {
-                log.info("Intercepted {}", command.getPayloadType().toString());
+                log.info("Intercepted {}", command.getPayloadType().getSimpleName());
                 CreateProductCommand createProductCommand = (CreateProductCommand) command.getPayload();
-                if (createProductCommand.getPrice().compareTo(BigDecimal.ZERO) <= 0) {
-                    throw new IllegalArgumentException("Product price must be greater than zero");
+                final ProductLookupEntity foundProduct = productLookupRepository.
+                        findByProductIdOrTitle(createProductCommand.getProductId(), createProductCommand.getTitle());
+                if (foundProduct != null) {
+                    throw new IllegalArgumentException(String.format("Product with id %s or title %s already exists",
+                            createProductCommand.getProductId(), createProductCommand.getTitle()));
                 }
-                if (Objects.requireNonNull(createProductCommand.getTitle()).isBlank() || createProductCommand.getTitle() == null) {
-                    throw new IllegalArgumentException("Title cannot be empty");
-                }
+
             }
             return command;
         };

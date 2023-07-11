@@ -33,3 +33,11 @@ server:
     include-message: always
     include-binding-errors: always
 
+## MAKE GROUPED EVENTHANDLERS UPDATE THE MAIN TABLE WITH A SINGLE THREAD
+axon:
+  eventhandling:
+    processors:
+      product-group:
+        mode: subscribing
+
+
