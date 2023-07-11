@@ -1,5 +1,6 @@
 package com.azubike.ellpsis.core.error_handling;
 
+import org.axonframework.commandhandling.CommandExecutionException;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -21,6 +22,11 @@ public class ProductServiceErrorHandler {
 
     @ExceptionHandler(Exception.class)
     ResponseEntity<ErrorMessage> handleException(Exception ex, WebRequest request) {
+        ErrorMessage errorMessage = new ErrorMessage(new Date(), ex.getMessage());
+        return new ResponseEntity<>(errorMessage, new HttpHeaders(), HttpStatus.BAD_REQUEST);
+    }
+    @ExceptionHandler(value = {CommandExecutionException.class})
+    ResponseEntity<ErrorMessage> handleCommandExecutionException(CommandExecutionException ex, WebRequest request) {
         ErrorMessage errorMessage = new ErrorMessage(new Date(), ex.getMessage());
         return new ResponseEntity<>(errorMessage, new HttpHeaders(), HttpStatus.BAD_REQUEST);
     }

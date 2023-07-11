@@ -6,6 +6,7 @@ import com.azubike.ellpsis.core.events.ProductCreatedEvent;
 import lombok.RequiredArgsConstructor;
 import org.axonframework.config.ProcessingGroup;
 import org.axonframework.eventhandling.EventHandler;
+import org.axonframework.messaging.interceptors.ExceptionHandler;
 import org.springframework.beans.BeanUtils;
 import org.springframework.stereotype.Component;
 
@@ -14,12 +15,29 @@ import org.springframework.stereotype.Component;
 @ProcessingGroup("product-group")
 public class ProductEventHandler {
     final ProductRepository productRepository;
+
     @EventHandler
     public void on(ProductCreatedEvent productCreatedEvent) {
         ProductEntity productEntity = new ProductEntity();
-        BeanUtils.copyProperties(productCreatedEvent ,productEntity);
-        // persists the command object in the main storage
-        productRepository.save(productEntity);
+        BeanUtils.copyProperties(productCreatedEvent, productEntity);
+        try {
+            // persists the command object in the main storage
+            productRepository.save(productEntity);
+        } catch (IllegalArgumentException ex) {
+            ex.printStackTrace();
+        }
+
+    }
+
+    @ExceptionHandler(resultType = IllegalArgumentException.class)
+    public void handle(IllegalArgumentException ex) {
+        throw ex ;
+
+    }
+
+    @ExceptionHandler(resultType = IllegalArgumentException.class)
+    public void handleGenericException(IllegalArgumentException ex) {
+
     }
 
 }

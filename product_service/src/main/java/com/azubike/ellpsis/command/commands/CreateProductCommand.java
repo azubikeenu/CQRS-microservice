@@ -1,4 +1,4 @@
-package com.azubike.ellpsis.command;
+package com.azubike.ellpsis.command.commands;
 
 import lombok.Builder;
 import lombok.Data;

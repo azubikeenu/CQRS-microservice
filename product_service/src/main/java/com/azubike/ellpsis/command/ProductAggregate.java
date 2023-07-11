@@ -1,5 +1,6 @@
 package com.azubike.ellpsis.command;
 
+import com.azubike.ellpsis.command.commands.CreateProductCommand;
 import com.azubike.ellpsis.core.events.ProductCreatedEvent;
 import lombok.NoArgsConstructor;
 import org.axonframework.commandhandling.CommandHandler;

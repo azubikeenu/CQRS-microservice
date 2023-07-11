@@ -1,6 +1,6 @@
 package com.azubike.ellpsis.command.interceptor;
 
-import com.azubike.ellpsis.command.CreateProductCommand;
+import com.azubike.ellpsis.command.commands.CreateProductCommand;
 import com.azubike.ellpsis.core.data.ProductLookupEntity;
 import com.azubike.ellpsis.core.data.ProductLookupRepository;
 import lombok.RequiredArgsConstructor;

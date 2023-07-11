@@ -1,4 +1,4 @@
-package com.azubike.ellpsis.command;
+package com.azubike.ellpsis.command.handlers;
 
 import com.azubike.ellpsis.core.data.ProductLookupEntity;
 import com.azubike.ellpsis.core.data.ProductLookupRepository;

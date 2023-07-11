@@ -1,6 +1,6 @@
 package com.azubike.ellpsis.command.rest;
 
-import com.azubike.ellpsis.command.CreateProductCommand;
+import com.azubike.ellpsis.command.commands.CreateProductCommand;
 import lombok.RequiredArgsConstructor;
 import org.axonframework.commandhandling.gateway.CommandGateway;
 import org.springframework.core.env.Environment;

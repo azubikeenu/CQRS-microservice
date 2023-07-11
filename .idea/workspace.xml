@@ -5,9 +5,29 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8ef9d01a-a6a1-4b3d-9b32-c48709aea66b" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/product_service/src/main/java/com/azubike/ellpsis/core/error_handling/ErrorMessage.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/order_service/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/order_service/src/main/java/com/azubike/ellipsis/OrderService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/order_service/src/main/java/com/azubike/ellipsis/command/OrderAggregate.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/order_service/src/main/java/com/azubike/ellipsis/command/commands/CreateOrderCommand.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/order_service/src/main/java/com/azubike/ellipsis/command/events/OrderCreatedEvent.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/order_service/src/main/java/com/azubike/ellipsis/command/rest/CreateOrderModel.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/order_service/src/main/java/com/azubike/ellipsis/command/rest/OrderCommandController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/order_service/src/main/java/com/azubike/ellipsis/core/OrderEntity.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/order_service/src/main/java/com/azubike/ellipsis/core/OrderRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/order_service/src/main/java/com/azubike/ellipsis/model/OrderStatus.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/order_service/src/main/java/com/azubike/ellipsis/query/OrdersEventHandler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/order_service/src/main/resources/application.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/order_service/src/main/resources/banner.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/product_service/src/main/java/com/azubike/ellpsis/core/error_handling/ProductServiceEventHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api-gateway/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/api-gateway/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/product_service/src/main/java/com/azubike/ellpsis/config/Registry.java" beforeDir="false" afterPath="$PROJECT_DIR$/product_service/src/main/java/com/azubike/ellpsis/config/Registry.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/product_service/src/main/java/com/azubike/ellpsis/core/error_handling/ProductServiceErrorHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/product_service/src/main/java/com/azubike/ellpsis/core/error_handling/ProductServiceErrorHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/product_service/src/main/java/com/azubike/ellpsis/query/ProductEventHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/product_service/src/main/java/com/azubike/ellpsis/query/ProductEventHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/product_service/src/main/java/com/azubike/ellpsis/query/rest/ProductQueryController.java" beforeDir="false" afterPath="$PROJECT_DIR$/product_service/src/main/java/com/azubike/ellpsis/query/rest/ProductQueryController.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -17,6 +37,7 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="Interface" />
         <option value="Class" />
       </list>
     </option>
@@ -27,6 +48,13 @@
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="useMavenConfig" value="true" />
+      </MavenGeneralSettings>
+    </option>
+  </component>
   <component name="ProjectId" id="2SJSResu1RB1jTIlwd6klON3saG" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
@@ -35,24 +63,32 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
-    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
-    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
-    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
-    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;jdk.selected.JAVA_MODULE&quot;: &quot;17&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;spring.configuration.checksum&quot;: &quot;72af215c85bd1ab8beb582a9c768f592&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "RequestMappingsPanelOrder0": "0",
+    "RequestMappingsPanelOrder1": "1",
+    "RequestMappingsPanelWidth0": "75",
+    "RequestMappingsPanelWidth1": "75",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "jdk.selected.JAVA_MODULE": "17",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0",
+    "spring.configuration.checksum": "72af215c85bd1ab8beb582a9c768f592"
   }
-}</component>
+}]]></component>
   <component name="ReactorSettings">
     <option name="notificationShown" value="true" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="com.azubike.ellipsis.command" />
+    </key>
   </component>
   <component name="RunDashboard">
     <option name="configurationTypes">
@@ -61,7 +97,7 @@
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="Spring Boot.DiscoveryServer">
+  <component name="RunManager" selected="Spring Boot.OrderServiceApplication">
     <configuration name="ApiGateway" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
       <module name="api-gateway" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.azubike.ellpsis.ApiGateway" />
@@ -88,6 +124,19 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="OrderService" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
+      <module name="orders" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.azubike.ellipsis.OrderService" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.azubike.ellipsis.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="ProductService" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
       <module name="product_service" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.azubike.ellpsis.ProductService" />
@@ -102,14 +151,16 @@
       </method>
     </configuration>
     <list>
+      <item itemvalue="Spring Boot.OrderServiceApplication" />
       <item itemvalue="Spring Boot.ApiGateway" />
       <item itemvalue="Spring Boot.DiscoveryServer" />
       <item itemvalue="Spring Boot.ProductService" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Spring Boot.ProductService" />
         <item itemvalue="Spring Boot.ApiGateway" />
+        <item itemvalue="Spring Boot.OrderServiceApplication" />
+        <item itemvalue="Spring Boot.ProductService" />
         <item itemvalue="Spring Boot.DiscoveryServer" />
       </list>
     </recent_temporary>
@@ -124,7 +175,7 @@
       <updated>1688863185522</updated>
       <workItem from="1688863187122" duration="17220000" />
       <workItem from="1688918112809" duration="23843000" />
-      <workItem from="1689049956448" duration="7668000" />
+      <workItem from="1689049956448" duration="14268000" />
     </task>
     <servers />
   </component>
