@@ -7,17 +7,21 @@ import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.context.request.WebRequest;
 
+import java.util.Date;
+
 @ControllerAdvice
 public class ProductServiceErrorHandler {
 
 
     @ExceptionHandler(IllegalArgumentException.class)
-    ResponseEntity<Object> handleIllegalStateException(IllegalArgumentException ex , WebRequest request){
-        return new ResponseEntity<>(ex.getMessage() , new HttpHeaders() , HttpStatus.BAD_REQUEST);
+    ResponseEntity<ErrorMessage> handleIllegalStateException(IllegalArgumentException ex, WebRequest request) {
+        ErrorMessage errorMessage = new ErrorMessage(new Date(), ex.getMessage());
+        return new ResponseEntity<>(errorMessage, new HttpHeaders(), HttpStatus.BAD_REQUEST);
     }
 
     @ExceptionHandler(Exception.class)
-    ResponseEntity<Object> handleException(Exception ex , WebRequest request){
-        return new ResponseEntity<>(ex.getMessage() , new HttpHeaders() , HttpStatus.BAD_REQUEST);
+    ResponseEntity<ErrorMessage> handleException(Exception ex, WebRequest request) {
+        ErrorMessage errorMessage = new ErrorMessage(new Date(), ex.getMessage());
+        return new ResponseEntity<>(errorMessage, new HttpHeaders(), HttpStatus.BAD_REQUEST);
     }
 }
