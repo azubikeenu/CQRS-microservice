@@ -6,11 +6,15 @@
   <component name="ChangeListManager">
     <list default="true" id="8ef9d01a-a6a1-4b3d-9b32-c48709aea66b" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/order_service/src/main/java/com/azubike/ellipsis/command/rest/OrderCommandController.java" beforeDir="false" afterPath="$PROJECT_DIR$/order_service/src/main/java/com/azubike/ellipsis/command/rest/OrderCommandController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/product_service/src/main/java/com/azubike/ellpsis/command/ProductAggregate.java" beforeDir="false" afterPath="$PROJECT_DIR$/product_service/src/main/java/com/azubike/ellpsis/command/ProductAggregate.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/product_service/src/main/java/com/azubike/ellpsis/command/rest/ProductCommandController.java" beforeDir="false" afterPath="$PROJECT_DIR$/product_service/src/main/java/com/azubike/ellpsis/command/rest/ProductCommandController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/product_service/src/main/java/com/azubike/ellpsis/core/data/ProductRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/product_service/src/main/java/com/azubike/ellpsis/core/data/ProductRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/product_service/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/product_service/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/product_service/src/main/java/com/azubike/ellpsis/command/handlers/ProductLookupEventsHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/product_service/src/main/java/com/azubike/ellpsis/command/handlers/ProductLookupEventsHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/product_service/src/main/java/com/azubike/ellpsis/command/interceptor/CreateProductCommandInterceptor.java" beforeDir="false" afterPath="$PROJECT_DIR$/product_service/src/main/java/com/azubike/ellpsis/command/interceptor/CreateProductCommandInterceptor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/product_service/src/main/java/com/azubike/ellpsis/config/Registry.java" beforeDir="false" afterPath="$PROJECT_DIR$/product_service/src/main/java/com/azubike/ellpsis/config/Registry.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/product_service/src/main/java/com/azubike/ellpsis/core/data/ProductLookupEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/product_service/src/main/java/com/azubike/ellpsis/core/data/ProductLookupEntity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/product_service/src/main/java/com/azubike/ellpsis/core/error_handling/ProductServiceErrorHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/product_service/src/main/java/com/azubike/ellpsis/core/error_handling/ProductServiceErrorHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/product_service/src/main/java/com/azubike/ellpsis/core/error_handling/ProductServiceEventHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/product_service/src/main/java/com/azubike/ellpsis/core/error_handling/ProductServiceEventErrorHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/product_service/src/main/java/com/azubike/ellpsis/query/handlers/ProductEventHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/product_service/src/main/java/com/azubike/ellpsis/query/handlers/ProductEventHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/product_service/src/main/java/com/azubike/ellpsis/query/handlers/ProductQueryHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/product_service/src/main/java/com/azubike/ellpsis/query/handlers/ProductQueryHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/product_service/src/main/java/com/azubike/ellpsis/query/rest/ProductQueryController.java" beforeDir="false" afterPath="$PROJECT_DIR$/product_service/src/main/java/com/azubike/ellpsis/query/rest/ProductQueryController.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -161,7 +165,7 @@
       <workItem from="1689049956448" duration="16741000" />
       <workItem from="1689138278904" duration="1593000" />
       <workItem from="1689618046470" duration="15000" />
-      <workItem from="1690000489296" duration="7749000" />
+      <workItem from="1690000489296" duration="16412000" />
     </task>
     <servers />
   </component>

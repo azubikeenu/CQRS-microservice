@@ -32,12 +32,11 @@ public class ProductEventHandler {
     @ExceptionHandler(resultType = IllegalArgumentException.class)
     public void handle(IllegalArgumentException ex) {
         throw ex ;
-
     }
 
-    @ExceptionHandler(resultType = IllegalArgumentException.class)
-    public void handleGenericException(IllegalArgumentException ex) {
-
+    @ExceptionHandler(resultType = Exception.class)
+    public void handle(Exception ex) throws Exception {
+        throw ex ;
     }
 
 }

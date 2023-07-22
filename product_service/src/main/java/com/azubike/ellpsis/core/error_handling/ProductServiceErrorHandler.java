@@ -13,7 +13,6 @@ import java.util.Date;
 @ControllerAdvice
 public class ProductServiceErrorHandler {
 
-
     @ExceptionHandler(IllegalArgumentException.class)
     ResponseEntity<ErrorMessage> handleIllegalStateException(IllegalArgumentException ex, WebRequest request) {
         ErrorMessage errorMessage = new ErrorMessage(new Date(), ex.getMessage());
@@ -25,6 +24,7 @@ public class ProductServiceErrorHandler {
         ErrorMessage errorMessage = new ErrorMessage(new Date(), ex.getMessage());
         return new ResponseEntity<>(errorMessage, new HttpHeaders(), HttpStatus.BAD_REQUEST);
     }
+    // This handles all exceptions thrown in the @CommandHandler
     @ExceptionHandler(value = {CommandExecutionException.class})
     ResponseEntity<ErrorMessage> handleCommandExecutionException(CommandExecutionException ex, WebRequest request) {
         ErrorMessage errorMessage = new ErrorMessage(new Date(), ex.getMessage());

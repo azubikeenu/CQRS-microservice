@@ -21,6 +21,7 @@ public class ProductQueryHandler {
     public List<ProductModel> findProducts(FindProductsQuery findProductsQuery) {
         final List<ProductEntity> storedProducts = productRepository.findAll();
         List<ProductModel> products = new ArrayList<>();
+
         for (ProductEntity productEntity : storedProducts) {
             ProductModel productModel = new ProductModel();
             BeanUtils.copyProperties(productEntity, productModel);

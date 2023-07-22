@@ -20,6 +20,7 @@ public class ProductQueryController {
     @GetMapping(produces = MediaType.APPLICATION_JSON_VALUE)
     public List<ProductModel> getProducts() {
         FindProductsQuery findProductsQuery = new FindProductsQuery();
+        // this dispatches a query to the query bus
         return queryGateway.
                 query(findProductsQuery, ResponseTypes.multipleInstancesOf(ProductModel.class)).join();
     }

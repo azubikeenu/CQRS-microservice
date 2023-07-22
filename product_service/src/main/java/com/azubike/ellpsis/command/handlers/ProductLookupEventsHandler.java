@@ -13,7 +13,6 @@ import org.springframework.stereotype.Component;
 @ProcessingGroup("product-group")
 public class ProductLookupEventsHandler {
     final ProductLookupRepository productLookupRepository;
-
     @EventHandler
     public void on(ProductCreatedEvent productCreatedEvent) {
         ProductLookupEntity productLookupEntity = new ProductLookupEntity(productCreatedEvent.getProductId(),
