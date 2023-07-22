@@ -1,7 +1,8 @@
-package com.azubike.ellpsis.query;
+package com.azubike.ellpsis.query.handlers;
 
 import com.azubike.ellpsis.core.data.ProductEntity;
 import com.azubike.ellpsis.core.data.ProductRepository;
+import com.azubike.ellpsis.query.FindProductsQuery;
 import com.azubike.ellpsis.query.rest.ProductModel;
 import lombok.RequiredArgsConstructor;
 import org.axonframework.queryhandling.QueryHandler;

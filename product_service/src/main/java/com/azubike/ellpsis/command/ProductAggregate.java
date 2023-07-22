@@ -35,10 +35,11 @@ public class ProductAggregate {
 
         ProductCreatedEvent productCreatedEvent = new ProductCreatedEvent();
         BeanUtils.copyProperties(createProductCommand, productCreatedEvent);
-        // persist the command object in the event store
+        // persist the command object in the event store and dispatches event to all eventHandlers listening to the productCreatedEvent
         AggregateLifecycle.apply(productCreatedEvent);
     }
 
+    // This updates the aggregateState with new information
     @EventSourcingHandler
     public void on(ProductCreatedEvent productCreatedEvent) {
         this.productId = productCreatedEvent.getProductId();

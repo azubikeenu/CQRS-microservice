@@ -1,4 +1,4 @@
-package com.azubike.ellpsis.query;
+package com.azubike.ellpsis.query.handlers;
 
 import com.azubike.ellpsis.core.data.ProductEntity;
 import com.azubike.ellpsis.core.data.ProductRepository;

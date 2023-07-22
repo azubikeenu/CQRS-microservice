@@ -18,6 +18,7 @@ import java.util.UUID;
 public class OrderCommandController {
     private final CommandGateway commandGateway;
 
+
     @PostMapping
     public String createOrder(@RequestBody @Valid CreateOrderModel createOrderModel) {
         final CreateOrderCommand createOrderCommand = CreateOrderCommand.builder()

@@ -18,8 +18,6 @@ import java.util.UUID;
 @RequestMapping("/api/v1/products")
 @RequiredArgsConstructor
 public class ProductCommandController {
-
-    private final Environment environment;
     private final CommandGateway commandGateway;
 
 
