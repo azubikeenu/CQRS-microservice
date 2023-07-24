@@ -1,5 +1,6 @@
 package com.azubike.ellpsis.query.handlers;
 
+import com.azubike.ellipsis.events.ProductReservedEvent;
 import com.azubike.ellpsis.core.data.ProductEntity;
 import com.azubike.ellpsis.core.data.ProductRepository;
 import com.azubike.ellpsis.core.events.ProductCreatedEvent;
@@ -29,6 +30,13 @@ public class ProductEventHandler {
 
     }
 
+
+    @EventHandler
+    public void reserveProduct(ProductReservedEvent productReservedEvent){
+        final ProductEntity foundProduct = productRepository.findByProductId(productReservedEvent.getProductId());
+        foundProduct.setQuantity(foundProduct.getQuantity() - productReservedEvent.getQuantity());
+        productRepository.save(foundProduct);
+    }
     @ExceptionHandler(resultType = IllegalArgumentException.class)
     public void handle(IllegalArgumentException ex) {
         throw ex ;

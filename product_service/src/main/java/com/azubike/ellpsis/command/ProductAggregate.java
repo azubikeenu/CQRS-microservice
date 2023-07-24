@@ -1,5 +1,7 @@
 package com.azubike.ellpsis.command;
 
+import com.azubike.ellipsis.commands.ReserveProductCommand;
+import com.azubike.ellipsis.events.ProductReservedEvent;
 import com.azubike.ellpsis.command.commands.CreateProductCommand;
 import com.azubike.ellpsis.core.events.ProductCreatedEvent;
 import lombok.NoArgsConstructor;
@@ -39,7 +41,19 @@ public class ProductAggregate {
         AggregateLifecycle.apply(productCreatedEvent);
     }
 
+
+    @CommandHandler
+    public void handle(ReserveProductCommand reserveProductCommand) {
+        if (quantity < reserveProductCommand.getQuantity()) {
+            throw new IllegalArgumentException("Not enough quantity in stock");
+        }
+        ProductReservedEvent productReservedEvent = new ProductReservedEvent();
+        BeanUtils.copyProperties(reserveProductCommand, productReservedEvent);
+        AggregateLifecycle.apply(productReservedEvent);
+    }
+
     // This updates the aggregateState with new information
+
     @EventSourcingHandler
     public void on(ProductCreatedEvent productCreatedEvent) {
         this.productId = productCreatedEvent.getProductId();
@@ -48,4 +62,8 @@ public class ProductAggregate {
         this.title = productCreatedEvent.getTitle();
     }
 
+    @EventSourcingHandler
+    public void on(ProductReservedEvent productReservedEvent) {
+        this.quantity -= productReservedEvent.getQuantity();
+    }
 }

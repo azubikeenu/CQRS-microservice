@@ -16,6 +16,7 @@ public class Registry {
         commandBus.registerDispatchInterceptor(commandInterceptor);
     }
 
+    // register the event error handler
     @Autowired
     public void configure(EventProcessingConfigurer configurer) {
         configurer.registerListenerInvocationErrorHandler("product-group", configuration ->
