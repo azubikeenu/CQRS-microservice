@@ -5,6 +5,7 @@ import com.azubike.ellpsis.core.data.ProductEntity;
 import com.azubike.ellpsis.core.data.ProductRepository;
 import com.azubike.ellpsis.core.events.ProductCreatedEvent;
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.axonframework.config.ProcessingGroup;
 import org.axonframework.eventhandling.EventHandler;
 import org.axonframework.messaging.interceptors.ExceptionHandler;
@@ -14,6 +15,7 @@ import org.springframework.stereotype.Component;
 @Component
 @RequiredArgsConstructor
 @ProcessingGroup("product-group")
+@Slf4j
 public class ProductEventHandler {
     final ProductRepository productRepository;
 
@@ -23,7 +25,8 @@ public class ProductEventHandler {
         BeanUtils.copyProperties(productCreatedEvent, productEntity);
         try {
             // persists the command object in the main storage
-            productRepository.save(productEntity);
+            final ProductEntity savedProduct = productRepository.save(productEntity);
+            log.info("Saving product {} with id {}" , savedProduct.getTitle() , savedProduct.getProductId());
         } catch (IllegalArgumentException ex) {
             ex.printStackTrace();
         }
@@ -35,7 +38,9 @@ public class ProductEventHandler {
     public void reserveProduct(ProductReservedEvent productReservedEvent){
         final ProductEntity foundProduct = productRepository.findByProductId(productReservedEvent.getProductId());
         foundProduct.setQuantity(foundProduct.getQuantity() - productReservedEvent.getQuantity());
+        log.info("Reserving quantity {} for product {}" , productReservedEvent.getQuantity() , foundProduct.getProductId());
         productRepository.save(foundProduct);
+
     }
     @ExceptionHandler(resultType = IllegalArgumentException.class)
     public void handle(IllegalArgumentException ex) {

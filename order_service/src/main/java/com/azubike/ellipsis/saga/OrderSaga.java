@@ -3,16 +3,22 @@ package com.azubike.ellipsis.saga;
 import com.azubike.ellipsis.commands.ReserveProductCommand;
 import com.azubike.ellipsis.core.events.OrderCreatedEvent;
 import com.azubike.ellipsis.events.ProductReservedEvent;
-import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.axonframework.commandhandling.gateway.CommandGateway;
 import org.axonframework.modelling.saga.SagaEventHandler;
 import org.axonframework.modelling.saga.StartSaga;
 import org.axonframework.spring.stereotype.Saga;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
 @Saga
-@RequiredArgsConstructor
+@Component
+@Slf4j
 public class OrderSaga {
-    private final transient CommandGateway commandGateway;
+
+    @Autowired
+    private transient CommandGateway commandGateway;
+
 
     @StartSaga
     @SagaEventHandler(associationProperty = "orderId")
@@ -25,11 +31,12 @@ public class OrderSaga {
                 // handle compensating transaction
             }
         }));
+        log.info("Handling order created event for order : {}", orderCreatedEvent.getOrderId());
     }
 
-    @SagaEventHandler(associationProperty ="orderId")
+    @SagaEventHandler(associationProperty = "orderId")
     public void handle(ProductReservedEvent productReservedEvent) {
-
+        log.info("Handling product reserved event for product : {}", productReservedEvent.getProductId());
     }
 
 }
