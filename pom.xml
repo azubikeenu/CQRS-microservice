@@ -13,6 +13,7 @@
         <module>api-gateway</module>
         <module>order_service</module>
         <module>shared</module>
+        <module>users</module>
     </modules>
     <packaging>pom</packaging>
 
