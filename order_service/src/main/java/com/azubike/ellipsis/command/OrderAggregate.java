@@ -1,6 +1,8 @@
 package com.azubike.ellipsis.command;
 
+import com.azubike.ellipsis.command.commands.ApproveOrderCommand;
 import com.azubike.ellipsis.command.commands.CreateOrderCommand;
+import com.azubike.ellipsis.core.events.OrderApprovedEvent;
 import com.azubike.ellipsis.core.events.OrderCreatedEvent;
 import com.azubike.ellipsis.model.OrderStatus;
 import lombok.NoArgsConstructor;
@@ -26,10 +28,15 @@ public class OrderAggregate {
 
     @CommandHandler
     public OrderAggregate(CreateOrderCommand createOrderCommand) {
-
         OrderCreatedEvent orderCreatedEvent = new OrderCreatedEvent();
         BeanUtils.copyProperties(createOrderCommand, orderCreatedEvent);
         AggregateLifecycle.apply(orderCreatedEvent);
+    }
+
+    @CommandHandler
+    public void handle(ApproveOrderCommand approveOrderCommand) {
+        OrderApprovedEvent orderApprovedEvent = new OrderApprovedEvent(approveOrderCommand.getOrderId());
+        AggregateLifecycle.apply(orderApprovedEvent);
     }
 
 
@@ -41,6 +48,11 @@ public class OrderAggregate {
         this.quantity = orderCreatedEvent.getQuantity();
         this.productId = orderCreatedEvent.getProductId();
         this.userId = orderCreatedEvent.getUserId();
+    }
+
+    @EventSourcingHandler
+    public void on(OrderApprovedEvent orderApprovedEvent) {
+        this.orderStatus = orderApprovedEvent.getOrderStatus();
     }
 
 
