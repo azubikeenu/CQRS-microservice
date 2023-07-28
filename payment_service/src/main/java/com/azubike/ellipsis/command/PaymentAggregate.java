@@ -34,9 +34,7 @@ public class PaymentAggregate {
         final PaymentProcessedEvent paymentProcessedEvent = PaymentProcessedEvent.builder()
                 .orderId(processPaymentCommand.getOrderId())
                 .paymentId(processPaymentCommand.getPaymentId()).build();
-
-        System.out.println(paymentProcessedEvent);
-
+        
         AggregateLifecycle.apply(paymentProcessedEvent);
     }
 

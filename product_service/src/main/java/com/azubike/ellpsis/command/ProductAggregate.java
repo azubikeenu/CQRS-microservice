@@ -1,10 +1,13 @@
 package com.azubike.ellpsis.command;
 
+import com.azubike.ellipsis.commands.CancelProductReservationCommand;
 import com.azubike.ellipsis.commands.ReserveProductCommand;
+import com.azubike.ellipsis.events.ProductReservationCancelledEvent;
 import com.azubike.ellipsis.events.ProductReservedEvent;
 import com.azubike.ellpsis.command.commands.CreateProductCommand;
 import com.azubike.ellpsis.core.events.ProductCreatedEvent;
 import lombok.NoArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.axonframework.commandhandling.CommandHandler;
 import org.axonframework.eventsourcing.EventSourcingHandler;
 import org.axonframework.modelling.command.AggregateIdentifier;
@@ -17,6 +20,7 @@ import java.util.Objects;
 
 @Aggregate
 @NoArgsConstructor
+@Slf4j
 public class ProductAggregate {
     @AggregateIdentifier
     private String productId;
@@ -47,12 +51,22 @@ public class ProductAggregate {
         if (quantity < reserveProductCommand.getQuantity()) {
             throw new IllegalArgumentException("Not enough quantity in stock");
         }
+
         ProductReservedEvent productReservedEvent = new ProductReservedEvent();
+
         BeanUtils.copyProperties(reserveProductCommand, productReservedEvent);
         AggregateLifecycle.apply(productReservedEvent);
     }
 
     // This updates the aggregateState with new information
+
+    @CommandHandler
+    public void handle(CancelProductReservationCommand cancelProductReservationCommand) {
+        ProductReservationCancelledEvent productReservationCancelledEvent = new ProductReservationCancelledEvent();
+        BeanUtils.copyProperties(cancelProductReservationCommand, productReservationCancelledEvent);
+        AggregateLifecycle.apply(productReservationCancelledEvent);
+
+    }
 
     @EventSourcingHandler
     public void on(ProductCreatedEvent productCreatedEvent) {
@@ -65,5 +79,10 @@ public class ProductAggregate {
     @EventSourcingHandler
     public void on(ProductReservedEvent productReservedEvent) {
         this.quantity -= productReservedEvent.getQuantity();
+    }
+
+    @EventSourcingHandler
+    public void on(ProductReservationCancelledEvent productReservationCancelledEvent) {
+        this.quantity += productReservationCancelledEvent.getQuantity();
     }
 }

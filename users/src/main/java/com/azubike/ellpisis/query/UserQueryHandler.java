@@ -24,7 +24,5 @@ public class UserQueryHandler {
                 .userId(fetchUserPaymentDetailsQuery.getUserId())
                 .paymentDetails(paymentDetails)
                 .build();
-
-
     }
 }

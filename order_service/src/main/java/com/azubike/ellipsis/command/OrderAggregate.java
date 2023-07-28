@@ -2,8 +2,10 @@ package com.azubike.ellipsis.command;
 
 import com.azubike.ellipsis.command.commands.ApproveOrderCommand;
 import com.azubike.ellipsis.command.commands.CreateOrderCommand;
+import com.azubike.ellipsis.command.commands.RejectOrderCommand;
 import com.azubike.ellipsis.core.events.OrderApprovedEvent;
 import com.azubike.ellipsis.core.events.OrderCreatedEvent;
+import com.azubike.ellipsis.core.events.OrderRejectedEvent;
 import com.azubike.ellipsis.model.OrderStatus;
 import lombok.NoArgsConstructor;
 import org.axonframework.commandhandling.CommandHandler;
@@ -39,6 +41,14 @@ public class OrderAggregate {
         AggregateLifecycle.apply(orderApprovedEvent);
     }
 
+    @CommandHandler
+    public void handle(RejectOrderCommand rejectOrderCommand) {
+        OrderRejectedEvent orderRejectedEvent = OrderRejectedEvent.builder().orderId(rejectOrderCommand.getOrderId())
+                .reason(rejectOrderCommand.getReason()).build();
+        AggregateLifecycle.apply(orderRejectedEvent);
+
+    }
+
 
     @EventSourcingHandler
     public void on(OrderCreatedEvent orderCreatedEvent) {
@@ -53,6 +63,11 @@ public class OrderAggregate {
     @EventSourcingHandler
     public void on(OrderApprovedEvent orderApprovedEvent) {
         this.orderStatus = orderApprovedEvent.getOrderStatus();
+    }
+
+    @EventSourcingHandler
+    public void on(OrderRejectedEvent orderRejectedEvent) {
+        this.orderStatus = orderRejectedEvent.getOrderStatus();
     }
 
 

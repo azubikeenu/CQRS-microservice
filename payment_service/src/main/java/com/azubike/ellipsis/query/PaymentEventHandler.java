@@ -5,7 +5,6 @@ import com.azubike.ellipsis.core.data.PaymentRepository;
 import com.azubike.ellipsis.events.PaymentProcessedEvent;
 import lombok.RequiredArgsConstructor;
 import org.axonframework.eventhandling.EventHandler;
-import org.springframework.beans.BeanUtils;
 import org.springframework.stereotype.Component;
 
 @Component
@@ -15,8 +14,8 @@ public class PaymentEventHandler {
 
     @EventHandler
     public void on(PaymentProcessedEvent paymentProcessedEvent) {
-        PaymentEntity paymentEntity = new PaymentEntity();
-        BeanUtils.copyProperties(paymentProcessedEvent, paymentEntity);
+        PaymentEntity paymentEntity = PaymentEntity.builder().paymentId(paymentProcessedEvent.getPaymentId())
+                .orderId(paymentProcessedEvent.getOrderId()).build();
         paymentRepository.save(paymentEntity);
     }
 

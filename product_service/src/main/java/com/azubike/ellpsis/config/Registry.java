@@ -23,6 +23,7 @@ public class Registry {
                 new ProductServiceEventErrorHandler()
         );
 
+
 ////////////////// Using the PropagatingErrorHandler ////////////////////////////////////////
 //        configurer.registerListenerInvocationErrorHandler("product-group", configuration ->
 //                PropagatingErrorHandler.instance()
